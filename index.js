@@ -44,6 +44,8 @@ StaticSiteGeneratorWebpackPlugin.prototype.apply = function(compiler) {
           .fromNode(render.bind(null, locals))
           .then(function(result) {
             compiler.assets[outputFileName] = createAssetFromContents(result);
+          }, function(error) {
+            compiler.errors.push(error);
           });
       });
 
