@@ -22,8 +22,8 @@ $ npm install --save-dev static-site-generator-webpack-plugin
 var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
 var paths = [
-  '/hello/',
-  '/world/'
+  { path: '/hello/', dest: 'index.html' },
+  { path: '/world/', dest: 'world.html' }
 ];
 
 module.exports = {
